@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> list_img;
     private List<String> list_describe;
     private List<String> list_count;
-    private List<List<String>> list_type;
+    private List<List<String>> list_type0,list_type1,list_type2,list_type3,list_type4;
     private List<List<List<String>>> list_positon;
     private List<Map<String,List<String>>> listallin;
     private Map<String,List<String>> listall;
@@ -60,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
         list_img=new ArrayList<>();
         list_describe=new ArrayList<>();
         list_topview=new ArrayList<>();
-        list_type=new ArrayList<>();
+        list_type0=new ArrayList<>();
+        list_type1=new ArrayList<>();
+        list_type2=new ArrayList<>();
+        list_type3=new ArrayList<>();
+        list_type4=new ArrayList<>();
+
         //u can use N *list or use list<list<list>>
         //like listimg1  listimg2 listimg3 to define 5 or more api souce data
         list_positon=new ArrayList<List<List<String>>>();
@@ -131,26 +136,27 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //network api one
-                list_type.add(list_topview);
-                list_positon.add(list_type);
+                list_type0.add(0,list_topview);
+                list_positon.add(0,list_type0);
 
-                list_type.clear();
+
+               // list_type.clear();
 
 
                 //network api two
-                list_type.add(list_item);
-                list_positon.add(list_type);
-                list_type.clear();
+                list_type1.add(0,list_item);
+                list_positon.add(1,list_type1);
+                //list_type.clear();
 
 
                 //network api three
-                list_type.add(list_img);
-                list_type.add(list_title);
-                list_positon.add(list_type);
-                list_type.clear();
-                list_type.add(list_item);
-                list_positon.add(list_type);
-                list_type.clear();
+                list_type2.add(0,list_img);
+                list_type2.add(1,list_title);
+                list_positon.add(2,list_type2);
+               // list_type.clear();
+                list_type3.add(0,list_item);
+                list_positon.add(3,list_type3);
+                //list_type.clear();
                 // oganize otherlist
                 list_title.clear();
                 for (int i=0;i<9;i++){
@@ -160,10 +166,10 @@ public class MainActivity extends AppCompatActivity {
                     list_describe.add("xxxxxx"+i);
 
                 }
-                list_type.add(list_img);
-                list_type.add(list_title);
-                list_type.add(list_describe);
-                list_positon.add(list_type);
+                list_type4.add(0,list_img);
+                list_type4.add(1,list_title);
+                list_type4.add(2,list_describe);
+                list_positon.add(4,list_type4);
                 for (int i=0;i<(list_positon.get(4).get(0).size() - 1 + list_positon.size() + 3);i++){
                     list_count.add("a");
                 }
@@ -171,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
                 anInt=10;
                 Log.i("xxxxxoo",list_positon.toString()+"");
-                Log.i("zzz",list_positon.get(0).toString());
+                Log.i("zzz",list_positon.get(3).toString());
                 ntypeadapter.notifyDataSetChanged();
             }
 
