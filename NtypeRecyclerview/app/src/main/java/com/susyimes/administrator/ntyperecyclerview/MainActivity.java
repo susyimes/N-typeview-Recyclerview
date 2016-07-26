@@ -132,22 +132,24 @@ public class MainActivity extends AppCompatActivity {
 
                 //network api one
                 list_type.add(list_topview);
-                list_positon.add(0,list_type);
+                list_positon.add(list_type);
+
                 list_type.clear();
+
 
                 //network api two
                 list_type.add(list_item);
-                list_positon.add(1,list_type);
+                list_positon.add(list_type);
                 list_type.clear();
 
 
                 //network api three
                 list_type.add(list_img);
                 list_type.add(list_title);
-                list_positon.add(2,list_type);
+                list_positon.add(list_type);
                 list_type.clear();
                 list_type.add(list_item);
-                list_positon.add(3,list_type);
+                list_positon.add(list_type);
                 list_type.clear();
                 // oganize otherlist
                 list_title.clear();
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 list_type.add(list_img);
                 list_type.add(list_title);
                 list_type.add(list_describe);
-                list_positon.add(4,list_type);
+                list_positon.add(list_type);
                 for (int i=0;i<(list_positon.get(4).get(0).size() - 1 + list_positon.size() + 3);i++){
                     list_count.add("a");
                 }
@@ -169,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
                 anInt=10;
                 Log.i("xxxxxoo",list_positon.toString()+"");
-                Log.i("zzz",(list_positon.get(3).get(0).size() - 1 + list_positon.size() + 3)+"");
+                Log.i("zzz",list_positon.get(0).toString());
                 ntypeadapter.notifyDataSetChanged();
             }
 
